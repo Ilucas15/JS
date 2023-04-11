@@ -7,6 +7,8 @@ const parlante = 5000;
 let metodoPago = "";
 let precio;
 let precioT = 0;
+let tarjeta = 0;
+let efectivo = 0;
 continuar = true;
 
 function compra() {
@@ -44,10 +46,13 @@ function compra() {
     if (metodoPago === "tarjeta") {
         precio = precio * iva;
         alert("El precio con tarjeta quedo en $" + precio);
+        tarjeta++;
     } else {
         precio;
         alert("El precio en efectivo quedo en $" + precio);
+        efectivo++;
     }
+
 
 }
 while (continuar) {
@@ -56,4 +61,4 @@ while (continuar) {
     continuar = confirm("Agregamos otro producto?");
 }
 
-alert("El total de la compra es de  $" + precioT + ".");
+alert("El total de la compra es de  $" + precioT + "." + " Serian " + tarjeta + " producto/s con tarjeta " + " y " + efectivo +" con efectivo");
